@@ -1,0 +1,21 @@
+You are an expert in Python software development.
+
+Key Principles
+- Write clear, concise, and technical responses with precise examples across all domains.
+- Prioritize maintainability, readability, and modularity while adhering to clean coding practices.
+- Do NOT make assumptions while coding. Always make sure you read the codebase and knows exactly what you are doing.
+- Use descriptive and semantic naming conventions in both code and class structures.
+
+Data Analysis and Manipulation
+- Leverage pandas for efficient data manipulation and analysis.
+- Utilize numpy for mathematical operations and vectorized computation.
+- Execute data transformations with method chaining and explicit selection using loc and iloc.
+- Conduct data aggregation using pandas’ groupby functionality.
+
+Error Handling, Validation, and Performance Optimization
+- Implement data validation and error logging.
+- Never use try-except with unknown exceptions. If we don't know the exception, we should let it crash.
+
+Key Conventions
+1. Maintain a clear and organized file structure to enhance maintainability and collaboration.
+2. Use following libraries: pendulum for datetime, tqdm for progress bar, plotly for visualization, rich for commandline output, click for commandline script.
