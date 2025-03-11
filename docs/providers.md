@@ -14,6 +14,21 @@ Rephysco supports the following LLM providers:
 
 Each provider has its own strengths, limitations, and specific features. This document will help you choose the right provider for your use case.
 
+## Provider Configuration
+
+All providers now support streaming by default through the LLMFactory implementation. The factory automatically applies the appropriate configuration for each provider and model.
+
+### Default Models
+
+Each provider has a default model that will be used if no model is specified:
+
+| Provider | Default Model |
+|----------|---------------|
+| OpenAI | GPT-4o |
+| Aliyun | Qwen Omni |
+| SiliconFlow | DeepSeek V3 |
+| XAI | grok-v2 |
+
 ## OpenAI
 
 ### Models
@@ -284,4 +299,26 @@ When choosing a provider, consider the following factors:
 2. **Test Multiple Providers**: Different providers excel at different tasks. Test multiple providers to find the best fit for your use case.
 3. **Use Streaming**: For real-time applications, use streaming responses to improve user experience.
 4. **Handle Errors**: Implement proper error handling to deal with API errors, rate limits, and other issues.
-5. **Monitor Usage**: Keep track of your API usage to avoid unexpected costs. 
+5. **Monitor Usage**: Keep track of your API usage to avoid unexpected costs.
+
+## Using the LLMFactory
+
+The recommended way to create LLMs is through the LLMFactory:
+
+```python
+from rephysco.llm_factory import LLMFactory
+from rephysco.types import ModelProvider
+
+# Create an LLM with default settings
+llm = LLMFactory.create_llm(provider=ModelProvider.OPENAI.value)
+
+# Create an LLM with custom settings
+llm = LLMFactory.create_llm(
+    provider=ModelProvider.ALIYUN.value,
+    model="qwen-omni-turbo",
+    temperature=0.8,
+    max_tokens=2000
+)
+```
+
+This ensures that all provider-specific and model-specific configurations are applied correctly. 

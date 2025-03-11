@@ -14,8 +14,8 @@ from rich.table import Table
 from rich.live import Live
 from rich.text import Text
 
-from rephsyco import LLMClient, ModelProvider
-from rephsyco.config import Aliyun, XAI, Gemini, SiliconFlow
+from rephysco import LLMClient, ModelProvider
+from rephysco.config import Aliyun, XAI, Gemini, SiliconFlow
 from examples.utils import save_response_to_file, encode_image_from_url
 
 # Set up logging

@@ -18,6 +18,8 @@ Rephysco is designed with the following principles in mind:
 - **Provider**: Implementations for various LLM providers (OpenAI, Gemini, etc.)
 - **Cache**: Disk-based caching to reduce API calls
 - **Retry**: Automatic retries with exponential backoff for transient errors
+- **LLMFactory**: Factory pattern for creating LLM instances with provider-specific configurations
+- **Agent**: ReAct agent implementation with Google Search and other tools
 
 ## Supported Providers
 
@@ -29,6 +31,7 @@ Rephysco supports the following LLM providers:
 - **Features**: Text generation, multimodal (images), streaming
 - **Strengths**: High-quality responses, strong reasoning, multimodal capabilities
 - **API Compatibility**: Native OpenAI API
+- **Default Model**: GPT-4o
 
 ### Gemini
 
@@ -45,6 +48,7 @@ Rephysco supports the following LLM providers:
 - **Strengths**: Multilingual support, multimodal capabilities
 - **API Compatibility**: OpenAI-compatible API
 - **Limitations**: Qwen-Omni requires streaming mode
+- **Default Model**: Qwen-Omni
 
 ### XAI (Grok)
 
@@ -52,6 +56,7 @@ Rephysco supports the following LLM providers:
 - **Features**: Text generation, multimodal (images), streaming
 - **Strengths**: Strong reasoning, multimodal capabilities
 - **API Compatibility**: OpenAI-compatible API
+- **Default Model**: Claude-3-Opus
 
 ### SiliconFlow
 
@@ -60,6 +65,7 @@ Rephysco supports the following LLM providers:
 - **Strengths**: Strong reasoning, specialized models
 - **API Compatibility**: OpenAI-compatible API
 - **Limitations**: No multimodal support
+- **Default Model**: DeepSeek-V2
 
 ## Features
 
@@ -70,6 +76,8 @@ Rephysco supports the following LLM providers:
 - Error handling
 - Streaming support
 - Multimodal capabilities (for supported providers)
+- Agent capabilities with Google Search integration
+- Factory pattern for LLM creation
 
 ## Installation
 

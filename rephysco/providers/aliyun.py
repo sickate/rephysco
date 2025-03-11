@@ -34,7 +34,7 @@ class AliyunProvider(BaseProvider):
         # Initialize the OpenAI client with Aliyun base URL
         self.client = AsyncOpenAI(
             api_key=self.api_key,
-            base_url=kwargs.get("base_url", AliyunConfig.SDK_URL)
+            base_url=kwargs.get("base_url", AliyunConfig.BASE_URL)
         )
         
         if not self.validate_api_key():

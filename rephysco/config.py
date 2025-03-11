@@ -26,6 +26,7 @@ class SiliconFlow:
 
 class Aliyun:
     DEEPSEEK_R1 = 'deepseek-r1'
+    DEEPSEEK_V3 = 'deepseek-v3'
     QWEN_MAX = 'qwen-max-latest'
     QWEN_PLUS = 'qwen-plus'
     QWEN_OMNI = 'qwen-omni-turbo' # 通义千问全模态理解生成大模型，支持文本, 图像，语音，视频输入理解和混合输入理解，具备文本和语音同时流式生成能力，提供了4种自然对话音色
@@ -62,3 +63,8 @@ class OpenAI:
     # API configuration
     API_KEY = os.getenv("OPENAI_API_KEY")
     BASE_URL = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
+
+
+class GoogleSearch:
+    API_KEY = os.getenv("GOOGLE_API_KEY")
+    CSE_ID = os.getenv("GOOGLE_SEARCH_ENGINE_ID")
