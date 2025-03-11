@@ -24,23 +24,19 @@ from llama_index.core.tools import BaseTool, FunctionTool
 from llama_index.tools.google import GoogleSearchToolSpec
 
 from rephysco import LLMClient, ModelProvider
-from rephysco.config import OpenAI as OpenAIConfig
+from rephysco.config import OpenAI as OpenAIConfig, GoogleSearch
 
 # Load environment variables from .env file
 load_dotenv()
 
-# Get API keys from environment variables
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-GOOGLE_CSE_ID = os.getenv("GOOGLE_SEARCH_ENGINE_ID")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # Ensure API keys are available
-if not GOOGLE_API_KEY or not GOOGLE_CSE_ID:
+if not GoogleSearch.API_KEY or not GoogleSearch.CSE_ID:
     print("Error: Google API key or CSE ID not found in environment variables.")
     print("Please set GOOGLE_API_KEY and GOOGLE_SEARCH_ENGINE_ID in your .env file.")
     sys.exit(1)
 
-if not OPENAI_API_KEY:
+if not OpenAIConfig.API_KEY:
     print("Error: OpenAI API key not found in environment variables.")
     print("Please set OPENAI_API_KEY in your .env file.")
     sys.exit(1)
@@ -87,7 +83,7 @@ class RephyscoReActAgent:
         self.llm = OpenAI(
             model=self.model,
             temperature=self.temperature,
-            api_key=OPENAI_API_KEY
+            api_key=OpenAIConfig.API_KEY
         )
         
         # Create tools
@@ -108,8 +104,8 @@ class RephyscoReActAgent:
         """
         # Create Google Search tool
         google_search_tool = GoogleSearchToolSpec(
-            key=GOOGLE_API_KEY,
-            engine=GOOGLE_CSE_ID
+            key=GoogleSearch.API_KEY,
+            engine=GoogleSearch.CSE_ID
         )
         
         # Create current time tool
