@@ -31,6 +31,9 @@ from .config import Aliyun, OpenAI, GoogleSearch
 from .llm_factory import LLMFactory
 from .examples.agent_session import run_agent_session
 
+# Load environment variables
+load_dotenv()
+
 console = Console()
 
 @click.group()

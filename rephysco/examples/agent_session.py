@@ -32,7 +32,15 @@ def run_agent_session(provider: str, model: Optional[str], temperature: float, v
         temperature: Temperature for generation
         verbose: Whether to show verbose output
     """
+    # Get the actual model name if not provided (using default)
+    actual_model = model
+    if actual_model is None and provider in LLMFactory.DEFAULT_MODELS:
+        actual_model = LLMFactory.DEFAULT_MODELS[provider]
+    
     console.print("[bold]Starting agent chat session with Google Search...[/bold]")
+    console.print(f"[bold blue]Provider:[/bold blue] {provider}")
+    console.print(f"[bold blue]Model:[/bold blue] {actual_model}")
+    console.print(f"[bold blue]Temperature:[/bold blue] {temperature}")
     console.print("Type 'exit' or 'quit' to end the session.")
     console.print()
     

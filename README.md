@@ -56,7 +56,7 @@ Rephysco supports the following LLM providers:
 - **Features**: Text generation, multimodal (images), streaming
 - **Strengths**: Strong reasoning, multimodal capabilities
 - **API Compatibility**: OpenAI-compatible API
-- **Default Model**: Claude-3-Opus
+- **Default Model**: Grok-2
 
 ### SiliconFlow
 
@@ -65,7 +65,7 @@ Rephysco supports the following LLM providers:
 - **Strengths**: Strong reasoning, specialized models
 - **API Compatibility**: OpenAI-compatible API
 - **Limitations**: No multimodal support
-- **Default Model**: DeepSeek-V2
+- **Default Model**: DeepSeek-V3
 
 ## Features
 

@@ -16,8 +16,8 @@ class SiliconFlow:
     # Models
     DEEPSEEK_V3 = "deepseek-v3"
     DEEPSEEK_R1 = "deepseek-r1"
-    DEEPSEEK_V3_PRO = "deepseek-v3-pro"
-    DEEPSEEK_R1_PRO = "deepseek-r1-pro"
+    DEEPSEEK_V3_PRO = "deepseek-v3-pro" # 付费版 Deepseek-V3
+    DEEPSEEK_R1_PRO = "deepseek-r1-pro" # 付费版 Deepseek-R1
     QWEN2_5_72B_INSTRUCT = "qwen2.5-72b-instruct"
     
     # API configuration
@@ -27,8 +27,9 @@ class SiliconFlow:
 class Aliyun:
     DEEPSEEK_R1 = 'deepseek-r1'
     DEEPSEEK_V3 = 'deepseek-v3'
-    QWEN_MAX = 'qwen-max-latest'
-    QWEN_PLUS = 'qwen-plus'
+    QWEN_QWQ = 'qwq-plus' # 基于 Qwen2.5-32B 模型训练的 QwQ 推理模型，对标 DeepSeek-R1
+    QWEN_MAX = 'qwen-max-latest' # 通义千问系列效果最好的模型，适合复杂、多步骤的任务, 数学、代码能力显著提升，提升对Table、JSON等结构化数据的理解和生成能力
+    QWEN_PLUS = 'qwen-plus' # 通义千问超大规模语言模型的增强版，支持中文英文等不同语言输入。
     QWEN_OMNI = 'qwen-omni-turbo' # 通义千问全模态理解生成大模型，支持文本, 图像，语音，视频输入理解和混合输入理解，具备文本和语音同时流式生成能力，提供了4种自然对话音色
 
     # API endpoints
